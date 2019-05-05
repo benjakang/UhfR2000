@@ -1,0 +1,51 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity" >
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <RadioButton
+            android:id="@+id/rbRead"
+            style="@style/rbStyle1"
+            android:text="@string/read" />
+
+        <RadioButton
+            android:id="@+id/rbWrite"
+            android:checked="true"
+            style="@style/rbStyle1"
+            android:text="@string/write" />
+
+        <RadioButton
+            android:id="@+id/rbSet"
+            style="@style/rbStyle1"
+            android:text="@string/setting" />
+
+        <RadioButton
+            android:id="@+id/rbUpload"
+            style="@style/rbStyle1"
+            android:text="@string/upload" />
+    </RadioGroup>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewPager"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" >
+    </android.support.v4.view.ViewPager>
+    <TextView 
+        android:id="@+id/tvVersion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:textSize="16sp"
+		android:layout_gravity="center_horizontal"        
+        />
+
+</LinearLayout>

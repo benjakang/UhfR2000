@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Read -->
+    <string name="scan">Scan</string>
+    <string name="stop">Stop</string>
+    <string name="clear">Clear</string>
+    <string name="read">Read</string>
+    <string name="write">Write</string>
+    <string name="setting">Setting</string>
+    <string name="save">Save</string>
+    <string name="upload">Upload</string>
+    <!-- Write -->
+    <string name="choice_mem">choice which mem to write</string>
+    <string name="reservations">Reservations</string>
+    <string name="epc">EPC</string>
+    <string name="users">Users</string>
+    <string name="tid">TID</string>
+    <string name="start_address">Start Address(word):</string>
+    <string name="data">Data</string>
+    <string name="input_address">please input the start address for writing</string>
+    <string name="epc_start_addr_greater_2">EPC start address must greater than or equal to 2</string>
+    <string name="input_data">please input the data for writing</string>
+    <string name="length_input">the length of input must be the multiple of 4</string>
+    <string name="write_succ">write succ</string>  
+    <string name="write_fail">write fail</string>
+    
+    <!-- Settting -->
+    <string name="read_setting">Read setting</string>
+    <string name="men">Mem:</string>
+    <string name="num_data">Num of Data(word):</string>
+    <string name="choice_voice">choice which voice for reading</string>
+    <string name="voice_system">System</string>
+    <string name="voice_custom">Custom</string>
+    <string name="reader_setting">Reader setting</string>
+    <string name="get_reader_info">Get ReaderInfo</string>
+    <string name="version">version:</string>
+    <string name="baud">baud:</string>
+    <string name="min_frequency">Min Frequency:</string>
+    <string name="max_frequency">Max Frequency:</string>
+    <string name="rf_power">RF Power:</string>
+    <string name="scan_time">Inventory Scan Time:</string>
+    <string name="update">Update</string>
+    <string name="restore_default">Restore Default</string>
+    <string name="update_read_setting_succ">update read setting succ</string>
+    <string name="get_readerinfo_fail">Get ReaderInfo fail</string>
+    <string name="baud_set_fail">baud set fail</string>
+    
+    <string name="set_frequency_fail">set frequency fail</string>
+    <string name="set_rf_power_fail">set RF power fail</string>
+    <string name="set_inventory_scan_time_fail">set inventory scan time fail</string>
+    <string name="restore_default_succ">Restore Default succ</string>
+    <string name="update_succ">update succ</string>
+    <string name="succ">succ</string>
+    
+    <!-- other -->
+    <string name="again_to_exit">Again according to exit the program!</string>
+    <string name="uhf_init_fail">UHF init fail</string>
+    
+    
+</resources>
