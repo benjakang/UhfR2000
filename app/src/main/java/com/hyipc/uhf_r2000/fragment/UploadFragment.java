@@ -107,12 +107,14 @@ public class UploadFragment extends Fragment {
             bundle.clear();
             try {
                 int length = 0;
-                //连接服务器 并设置连接超时为5秒
+                //连接服务器
                 Socket socket = new Socket();
                 InetSocketAddress socketAddress = new InetSocketAddress(
                         InetAddress.getByName(mEtServiceAddr.getText().toString()),
                         Integer.parseInt(mEtServicePort.getText().toString()));
+                mTvDisplay.append("开始连接。。。");
                 socket.connect(socketAddress, 5000);
+                mTvDisplay.append("lianjie");
                 //获取输入输出流
                 DataOutputStream dout = new DataOutputStream(socket.getOutputStream());
                 File file = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM)
@@ -121,11 +123,24 @@ public class UploadFragment extends Fragment {
 
                 BufferedReader bff = new BufferedReader(new InputStreamReader(
                         socket.getInputStream()));
+
+                //向服务器发送信息（输出）
+//                StringBuilder bf = new StringBuilder();
+                byte[] sendByte = new byte[1024];
+//                dout.writeUTF(file.getName());
+                while((length = fin.read(sendByte, 0, sendByte.length)) != -1){
+                    dout.write(sendByte,0,length);
+                    dout.flush();
+                }
+                socket.shutdownOutput();
+
+
+
                 //读取发来服务器信息(输入)
-                String line = null;
-                String buffer="";
+                String line ;
+                StringBuilder buffer= new StringBuilder("");
                 while ((line = bff.readLine()) != null) {
-                    buffer = line + buffer;
+                    buffer.append(line);
                 }
 
                 bundle.putString("msg", buffer.toString());
@@ -133,16 +148,11 @@ public class UploadFragment extends Fragment {
                 //修改UI线程中的组件
                 myHandler.sendMessage(msg);
 
-                //向服务器发送信息（输出）
-                byte[] sendByte = new byte[1024];
-                dout.writeUTF(file.getName());
-                while((length = fin.read(sendByte, 0, sendByte.length))>0){
-                    dout.write(sendByte,0,length);
-                    dout.flush();
-                }
+
 
                 //关闭各种输入输出流
                 bff.close();
+                fin.close();
                 dout.close();
                 socket.close();
             } catch (SocketTimeoutException aa) {
